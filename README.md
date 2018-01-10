@@ -4,4 +4,4 @@
 [locdump](locdump.js) | uid0.locdump
 [userdb](userdb.js) | Not Public
 [locdb](locdb.js) | Not Public
-[License](LICENSE) | This repositories license
+[License](LICENSE) | The License
