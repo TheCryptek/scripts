@@ -1,23 +1,25 @@
 function(context, args) {
 	args=args || {} // Prevents the error: TypeError: Cannot read property 'action' of null
-	if (args.loc == "print") { // { action:"print" }
+	if (args.action == "print") { // { action:"print" }
 		return #db.f({loc:{$exists:true}}).array() // print what is in the db
 	}
-	if (args.loc == "add") { //{loc:"add"}
-		var secLevel = #fs.scripts.get_level({name:args.obj.loc})
-		#db.i(args.obj)
+	if (args.action == "add") { //{loc:"add"}
+		var secLevel = #fs.scripts.get_level({name:args.loc})
+		//args.obj.sec=secLevel
+		#db.i({loc:args.loc, sec:secLevel})
 		return [
 			' ',
-			'loc: ' + args.obj.loc,
+			'loc: ' + args.loc,
 			'SecLevel: ' + secLevel,
 			'Status: Added'
 		]
 	}
-	if (args.loc == "remove") {
-		#db.r(args.obj)
+	if (args.action == "remove") {
+		///args.obj.sec=secLevel
+		#db.r({loc:args.loc})
 		return [
 			' ',
-			'loc: ' + args.obj.loc,
+			'loc: ' + args.loc,
 			'SecLevel: ' + secLevel,
 			'Status: Removed'
 		]
