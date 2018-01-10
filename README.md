@@ -1,3 +1,6 @@
+This repo is for my collection of scripts
+for the game Hackmud.
+#
 | Name of File | Script on Hackmud |
   ------------ | -----------------
 [Public](public.js) | uid0.public
