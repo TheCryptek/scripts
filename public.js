@@ -30,11 +30,9 @@ function(context, args) {
 			"`D/!\\` `FComing Soon` `D/!\\`",
 		]
 	 }
-	 if (args.nav == "scripts") {
+	 if (args.nav == "locdump") {
 		 return [
-			"                           ",
-			"`D/!\\' `FComing Soon` `D/!\\`",
-			
+			#fs.uid0.locdump()
 		 ]
 	 }
 	 return [

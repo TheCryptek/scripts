@@ -6,7 +6,7 @@ function(context, args) {
 	if (args.action == "add") { //{loc:"add"}
 		var secLevel = #fs.scripts.get_level({name:args.loc})
 		//args.obj.sec=secLevel
-		#db.i({loc:args.loc, sec:secLevel})
+		#db.i({loc:args.loc})
 		return [
 			' ',
 			'loc: ' + args.loc,
@@ -15,6 +15,7 @@ function(context, args) {
 		]
 	}
 	if (args.action == "remove") {
+		var secLevel = #fs.scripts.get_level({name:args.loc})
 		///args.obj.sec=secLevel
 		#db.r({loc:args.loc})
 		return [
