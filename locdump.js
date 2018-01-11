@@ -1,9 +1,9 @@
 function(context, args) {
 	args=args || {} //prevents the error: TypeError: Cannot read property 'action' of null'
-	let found = #db.f({user: context.caller}).first()
-	 if( found == null ) {
-		  return "\n`D/!\\` `FMaintenance Mode` `D/!\\`"
-	 }
+	//let found = #db.f({user: context.caller}).first()
+	 //if( found == null ) {
+		  //return "\n`D/!\\` `FMaintenance Mode` `D/!\\`"
+	 //}
 	 return [
         " ",
         #db.f({loc:{$exists:true}}).array().map(o=>{
@@ -16,8 +16,8 @@ function(context, args) {
 			return o.sec+' | '+o.loc
         }).join('\n'),
         " ",
-        "Sec levels are checked once a day",
-        " ",
-        "This loc dump was made with help from `DDTR` and `Ddo`"
+        "Sec levels are checked at each script run",
+        " "
+       // "This loc dump was made with help from `DDTR` and `Ddo`"
      ]
 }

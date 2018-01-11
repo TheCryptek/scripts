@@ -1,11 +1,11 @@
 function(context, args) {
 	args = args || {}
 	// Comment the db lock out when maintenance mode deactivated.
-	 let found = #db.f({user: context.caller}).first()
-	 if( found == null ) {
-		  return "\n`D/!\\` `FMaintenance Mode` `D/!\\`"
+	 //let found = #db.f({user: context.caller}).first()
+	 //if( found == null ) {
+		  //return "\n`D/!\\` `FMaintenance Mode` `D/!\\`"
 		// return "\n`DERROR: Access Denied`"
-	 }
+	 //}
 	 if (args.nav == "info") {
 		 return [
 			"                                             ",
@@ -46,6 +46,6 @@ function(context, args) {
 		"`L| (___) |___) (___| (__/  )|  (__) |`",
 		"`L(_______)\\_______/(______/ (_______)`",
 		"                                        ",
-		" | `Xinfo` | `Xdonate` | `Xcorp` | `Xscripts` | "
+		" | `Xinfo` | `Xdonate` | `Xcorp` | `Xlocdump` | "
 	 ]     
 }
